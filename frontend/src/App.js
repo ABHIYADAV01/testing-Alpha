@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AuthForm from './components/AuthForm';
 import AdminWelcomePage from './components/AdminWelcomePage';
-import TrainerWelcomePage from './components/TrainerWelcomePage';
+import TrainerWelcomePage from './components/trainer/TrainerWelcomePage';
 import TraineeWelcomePage from './components/trainee/TraineeWelcomePage';
 
 function App() {

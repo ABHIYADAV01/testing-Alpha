@@ -67,9 +67,9 @@ function AuthForm() {
                                 className="w-full p-2 border border-gray-300 rounded-md"
                                 required
                             >
-                                <option value="admin">Admin</option>
-                                <option value="trainer">Trainer</option>
-                                <option value="trainee">Trainee</option>
+                                <option value="admin" style={{ color: 'black' }}>Admin</option>
+                                <option value="trainer" style={{ color: 'black' }}>Trainer</option>
+                                <option value="trainee" style={{ color: 'black' }}>Trainee</option>
                             </select>
                         </>
                     )}
@@ -81,6 +81,7 @@ function AuthForm() {
                         placeholder="Email"
                         className="w-full p-2 border border-gray-300 rounded-md"
                         required
+                        style={{ color: 'black' }}
                     />
                     <input
                         type="password"
@@ -90,10 +91,12 @@ function AuthForm() {
                         placeholder="Password"
                         className="w-full p-2 border border-gray-300 rounded-md"
                         required
+                        style={{ color: 'black' }}
                     />
                     <button
                         type="submit"
                         className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+                        style={{ color: 'black' }}
                     >
                         {form.isSignup ? "Sign Up" : "Sign In"}
                     </button>
@@ -101,6 +104,7 @@ function AuthForm() {
                 <button
                     onClick={toggleMode}
                     className="mt-4 text-sm text-blue-500 hover:underline"
+                    style={{ color: 'black' }}
                 >
                     {form.isSignup ? "Switch to Sign In" : "Switch to Sign Up"}
                 </button>
