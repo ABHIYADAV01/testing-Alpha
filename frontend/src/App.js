@@ -4,6 +4,7 @@ import AuthForm from './components/AuthForm';
 import AdminWelcomePage from './components/AdminWelcomePage';
 import TrainerWelcomePage from './components/trainer/TrainerWelcomePage';
 import TraineeWelcomePage from './components/trainee/TraineeWelcomePage';
+import TrainerOptions from './components/trainer/TrainerOptions' ;
 
 function App() {
     const [user, setUser] = useState(null);
@@ -33,7 +34,7 @@ function App() {
                 <Routes>
                     <Route path="/login" element={user ? <Navigate replace to={`/${user.role}`} /> : <AuthForm/>} />
                     <Route path="/admin" element={user && user.role === 'admin' ? <AdminWelcomePage  /> : <AdminWelcomePage user={user} />} />
-                    <Route path="/trainer" element={user && user.role === 'trainer' ? <TrainerWelcomePage /> :  <TrainerWelcomePage user={user} />} />
+                    <Route path="/trainer" element={user && user.role === 'trainer' ? <TrainerOptions/> :  <TrainerOptions user={user} />} />
                     <Route path="/welcome" element={user && user.role === 'trainee' ? <TraineeWelcomePage /> : <TraineeWelcomePage user={user} /> } />
                     <Route path="/" element={<Navigate replace to="/login" />} />
                 </Routes>
