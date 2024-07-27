@@ -3,8 +3,9 @@ import { useNavigate, Link } from 'react-router-dom';
 import TrainerWelcomePage from '../trainer/TrainerWelcomePage';
 import ViewCamps from "./ViewCamps"
 import BookingForm from './BookingForm';
-
-
+import Frame from '../trainee/assets/Frame.png'
+import Cadet from '../trainee/assets/cadet.png'
+import Imageinframe from './ImageFrame';
 export default function TraineeWelcomePage() {
     const [selectedOpt, setSelectedOpt] = useState(null);
     const navigate = useNavigate();
@@ -27,14 +28,15 @@ export default function TraineeWelcomePage() {
             case '3':
                 return <BookingForm/>;
             default:
-                return null;
+                return <Imageinframe/>;
         }
     };
 
-    return (
-        <div className="min-h-screen bg-gray-100 flex flex-col items-center">
-            <nav className="bg-blue-500 w-full py-4 fixed top-0 z-10">
-                <div className="container flex flex-col items-end mx-auto">
+    return (<div className="min-h-screen flex flex-col items-center" style={{ backgroundColor: '#F3F6FB' }}>
+       
+            <nav className="bg-blue-500 w-full  py-4 fixed top-0 z-10">
+                <div className="container flex flex-row  justify-between pl-10 pr-10 mx-auto">
+                    <img src={Cadet}></img>
                     <button onClick={handleLogout} className="text-white hover:underline">Logout</button>
                 </div>
             </nav>
@@ -47,8 +49,10 @@ export default function TraineeWelcomePage() {
                     <option value="2" style={{ color: 'black' }}>View Camps/Apply for Camps</option>
                     <option value="3" style={{ color: 'black' }}>Register Booking</option>
                 </select>
+
             </div>
             <div className="mt-10 flex flex-col items-center">
+            
                 {renderOpt()}
             </div>
         </div>

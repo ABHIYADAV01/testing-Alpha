@@ -4,7 +4,9 @@ import Quiz1 from './Quiz1';
 import Quiz2 from './Quiz2';
 import Quiz3 from './Quiz3';
 import Quiz4 from './Quiz4';
-
+import JobPage from './JobPage';
+import Cadet from '../trainee/assets/cadet.png'
+import Imageinframe from '../trainer/ImageFrame';
 export default function TraineeWelcomePage() {
     const [selectedQuiz, setSelectedQuiz] = useState(null);
     const navigate = useNavigate();
@@ -29,14 +31,15 @@ export default function TraineeWelcomePage() {
             case '4':
                 return <Quiz4 />;
             default:
-                return null;
+                return <Imageinframe/>;
         }
     };
 
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col items-center">
             <nav className="bg-blue-500 w-full py-4 fixed top-0 z-10">
-                <div className="container flex flex-col items-end mx-auto">
+            <div className="container flex flex-row  justify-between pl-10 pr-10 mx-auto">
+            <img src={Cadet}></img>
                     <button onClick={handleLogout} className="text-white hover:underline">Logout</button>
                 </div>
             </nav>
@@ -54,6 +57,8 @@ export default function TraineeWelcomePage() {
             <div className="mt-10 flex flex-col items-center">
                 {renderQuiz()}
             </div>
+            <JobPage />
+            
         </div>
     );
 }
