@@ -13,9 +13,9 @@ router.get("/retrieve-all", getCamps);
 
 // router.post("/update/trainee", updateTraineeIds)
 
-// router.post("/update/applied-trainer", updateAppliedTrainerIds)
+router.post("/update/applied-trainer", updateAppliedTrainerIds)
 
-router.post("/update/selected-trainers", updateSelectedTrainerIds)
+//router.post("/update/selected-trainers", updateSelectedTrainerIds)
 
 
 

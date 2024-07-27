@@ -5,6 +5,7 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const trainerRoutes = require('./routes/trainerRoutes');
 const campRoutes = require('./routes/campRoutes');
+const bookingRoutes = require('./routes/bookingRoutes')
 const lAEP = require("express-list-endpoints");
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,6 +23,8 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 app.use('/api/users', userRoutes);
 app.use('/api/trainers',trainerRoutes);
 app.use('/api/camps',campRoutes);
+app.use('/api/bookings',bookingRoutes);
+
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 console.log(lAEP(app));

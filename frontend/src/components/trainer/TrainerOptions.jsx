@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import TrainerWelcomePage from '../trainer/TrainerWelcomePage';
 import ViewCamps from "./ViewCamps"
+import BookingForm from './BookingForm';
 
 
 export default function TraineeWelcomePage() {
@@ -24,9 +25,7 @@ export default function TraineeWelcomePage() {
             case '2':
                 return <ViewCamps />;
             case '3':
-                return <TrainerWelcomePage/>;
-            case '4':
-                return <TrainerWelcomePage />;
+                return <BookingForm/>;
             default:
                 return null;
         }
@@ -45,9 +44,8 @@ export default function TraineeWelcomePage() {
                 <select onChange={handleOptChange} className="mt-4 p-2 border rounded" style={{ color: 'black' }}>
                     <option value="" style={{ color: 'black' }}>Select a Option</option>
                     <option value="1" style={{ color: 'black' }}>Complete Profile</option>
-                    <option value="2" style={{ color: 'black' }}>View Camps</option>
-                    <option value="3" style={{ color: 'black' }}>Apply for Camps</option>
-                    <option value="4" style={{ color: 'black' }}>Register Booking</option>
+                    <option value="2" style={{ color: 'black' }}>View Camps/Apply for Camps</option>
+                    <option value="3" style={{ color: 'black' }}>Register Booking</option>
                 </select>
             </div>
             <div className="mt-10 flex flex-col items-center">
